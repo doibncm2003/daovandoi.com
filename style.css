@@ -66,10 +66,12 @@ header {
 .menu-toggle {
     font-size: 1.5rem;
     cursor: pointer;
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    top: 10px;
     right: 20px;
+    bottom: 10px;
     z-index: 2;
 }
 
@@ -146,13 +148,14 @@ nav a:hover {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 65px;
+        top: 45px;
         right: 0; /* Điều chỉnh vị trí menu xuất hiện ở bên phải */
-        width: 40%;
+        width: 30%;
         background-color: #333;
         z-index: 1;
-        height: 250%;
+        height: max-content;
         border-bottom-left-radius: 10px;
+        padding: 10px;
     }
 
     nav.active {
@@ -217,26 +220,3 @@ nav a:hover {
         }
     }
 }
-
-.transit-img {
-    perspective: 1000px; /* Đặt perspective cho hiệu ứng 3D */
-}
-.transit-img img{
-    height: 150px;
-}
-.transit-img img:hover {
-    height: 150px;
-    transform-style: preserve-3d; /* Bảo toàn cấu trúc 3D khi xoay */
-    animation: rotateY 5s infinite linear; /* Áp dụng animation với tên rotateY, thời gian 5s, lặp vô hạn, và kiểu linear */
-}
-
-@keyframes rotateY {
-    0% {
-        transform: rotateY(0deg); /* Góc xoay ở thời điểm 0% */
-    }
-    100% {
-        transform: rotateY(360deg); /* Góc xoay ở thời điểm 100%, xoay một vòng đầy đủ */
-    }
-}
-
-/*sajfhksajgfdkjsagfkjsagfkjgsakjfgsajk*/
