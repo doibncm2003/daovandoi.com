@@ -69,7 +69,7 @@ function capNhatDongHo() {
     const chuoiNgay = format(bayGio, "EEEE, 'ngày' d MMMM 'năm' yyyy", { locale: viLocale });
     const chuoiGio = bayGio.toLocaleTimeString('vi-VN', tuyChonGio);
 
-    phanTuDongHo.textContent = `${chuoiNgay} - ${chuoiGio}`;
+    phanTuDongHo.innerHTML = `${chuoiNgay} <br>Thời gian: ${chuoiGio}`;
 }
 
 // Cập nhật ngày và giờ mỗi giây
