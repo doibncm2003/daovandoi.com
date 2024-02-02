@@ -5,14 +5,29 @@ body {
     box-sizing: border-box;
 }
 
+.main-content {
+    padding: 40px 0;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
     align-items: center;
+    display: flex;
+    justify-content: space-between;
 }
-
+.footer{
+    max-height: 1200px;
+    bottom: 0px;
+}
+#banner {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 header {
     background-color: #333;
     color: #fff;
@@ -24,12 +39,28 @@ header {
     flex-grow: 1;
     font-size: 1.5rem;
     margin-right: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
-
+.logo img{
+    height: 50px;
+    border-radius: 100%;
+}
+.kedoc{
+    width: 2px;
+    height: 40px;
+    background-color: #fff;
+    margin: 10px;
+}
 .menu-toggle {
     font-size: 1.5rem;
     cursor: pointer;
     display: none;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 2;
 }
 
 nav {
@@ -81,44 +112,43 @@ nav ul li a::after{
 nav ul li a:hover::after{
     transform: scaleX(1);
 }
+
 nav a:hover {
     color: #ffd700; /* Màu khi hover */
 }
-.main-content {
+
+.banner {
+    background-color: #eee;
     padding: 40px 0;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
     text-align: center;
-    padding: 10px 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    margin-top: auto;
 }
-
 /* Responsive styles */
 @media screen and (max-width: 768px) {
     .menu-toggle {
         display: block;
-        padding-bottom: 10px;
+        margin-top: 7px;
     }
-
+    #menu{
+        display: flex;
+        align-items: center;
+    }
     nav {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 45px;
-        left: 0;
-        width: 100%;
+        top: 65px;
+        right: 0; /* Điều chỉnh vị trí menu xuất hiện ở bên phải */
+        width: 40%;
         background-color: #333;
         z-index: 1;
+        height: 250%;
+        border-bottom-left-radius: 10px;
     }
 
     nav.active {
         display: flex;
+        animation: slideIn 0.5s ease-in-out;
+        z-index: 99;
     }
 
     nav ul {
@@ -128,11 +158,53 @@ footer {
     nav ul li {
         margin: 0;
         text-align: center;
-        padding: 5px;
+        margin-top: 9px;
+    }
+
+    nav ul li a{
+        text-decoration: none; 
+        color: #fff;
+        font-size: 23px;
+        position: relative;
+        font-size: 1.1em;
+        text-align: center;
+    }
+
+    nav ul li a::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 5px;
+        bottom: -5px;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: right left;
+        transition: .3s;
+    }
+
+    nav ul li a:hover::after{
+        transform: scaleX(1);
     }
 
     header {
         padding: 10px 20px;
+    }
+
+    .banner {
+        padding: 20px 0;
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
 #footer{
