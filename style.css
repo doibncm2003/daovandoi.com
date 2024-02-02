@@ -21,6 +21,7 @@ body {
 }
 .footer{
     max-height: 1200px;
+    margin-top: auto;
     bottom: 0px;
 }
 #banner {
