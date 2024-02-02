@@ -52,7 +52,7 @@ function capNhatDongHo() {
     const chuoiGio = bayGio.toLocaleTimeString('vi-VN', tuyChonGio);
 
     phanTuDongHo.textContent = `${chuoiNgay} 
-                                Thời gian: ${chuoiGio}`;
+                                \nThời gian: ${chuoiGio}`;
 }
 
 // Cập nhật ngày và giờ mỗi giây
