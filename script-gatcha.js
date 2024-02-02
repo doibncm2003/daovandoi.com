@@ -40,36 +40,18 @@ function displayFinalResult(numbers) {
 function getRandomNumber() {
     return Math.floor(Math.random() * 10); // Số ngẫu nhiên từ 0 đến 9
 }
-//////
-// function capNhatDongHo() {
-//     const phanTuDongHo = document.getElementById('live-clock');
-    
-//     const bayGio = new Date();
-//     const tuyChonNgay = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-//     const tuyChonGio = { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
-
-//     const chuoiNgay = bayGio.toLocaleDateString('vi-VN', tuyChonNgay);
-//     const chuoiGio = bayGio.toLocaleTimeString('vi-VN', tuyChonGio);
-
-//     phanTuDongHo.innerHTML = `${chuoiNgay} <br>Thời gian: ${chuoiGio}`;
-// }
-
-// // Cập nhật ngày và giờ mỗi giây
-// setInterval(capNhatDongHo, 1000);
-
-// // Cập nhật lần đầu tiên khi trang được tải
-// capNhatDongHo();
+////////
 function capNhatDongHo() {
     const phanTuDongHo = document.getElementById('live-clock');
     
     const bayGio = new Date();
     const tuyChonNgay = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const tuyChonGio = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+    const tuyChonGio = { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false };
 
-    const chuoiNgay = format(bayGio, "EEEE, 'ngày' d MMMM 'năm' yyyy", { locale: viLocale });
+    const chuoiNgay = bayGio.toLocaleDateString('vi-VN', tuyChonNgay);
     const chuoiGio = bayGio.toLocaleTimeString('vi-VN', tuyChonGio);
 
-    phanTuDongHo.innerHTML = `${chuoiNgay} <br>Thời gian: ${chuoiGio}`;
+    phanTuDongHo.textContent = `${chuoiNgay} - ${chuoiGio}`;
 }
 
 // Cập nhật ngày và giờ mỗi giây
