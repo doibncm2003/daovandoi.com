@@ -17,6 +17,7 @@ body {
     align-items: center;
     display: flex;
     justify-content: space-between;
+    background-color: #333;
 }
 .footer{
     max-height: 1200px;
@@ -56,9 +57,9 @@ header {
 .menu-toggle {
     font-size: 1.5rem;
     cursor: pointer;
-    display: none;
-    position: absolute;
-    top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     right: 20px;
     z-index: 2;
 }
@@ -126,7 +127,6 @@ nav a:hover {
 @media screen and (max-width: 768px) {
     .menu-toggle {
         display: block;
-        margin-top: 7px;
     }
     #menu{
         display: flex;
@@ -138,7 +138,7 @@ nav a:hover {
         position: absolute;
         top: 65px;
         right: 0; /* Điều chỉnh vị trí menu xuất hiện ở bên phải */
-        width: 40%;
+        width: max-content;
         background-color: #333;
         z-index: 1;
         height: 250%;
