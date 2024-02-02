@@ -69,4 +69,7 @@ button:hover {
 .clock-container {
     font-size: 24px;
     margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
