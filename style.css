@@ -45,6 +45,7 @@ header {
     padding: 20px 0;
     position: relative;
     z-index: 50;
+    height: 80px;
 }
 
 .logo {
