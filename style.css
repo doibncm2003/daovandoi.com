@@ -259,3 +259,9 @@ nav a:hover {
         opacity: 2;
     }
 }
+.text-rain{
+    display: flex;
+    align-items: center;
+    background-color: #0c0c0c;
+    justify-content: center;
+}
